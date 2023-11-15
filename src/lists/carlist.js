@@ -48,62 +48,46 @@ function CarList({ combinedArray, carsArray }) {
       </div>
     );
   };
+
   return (
-    <div style={{ backgroundColor: "#fc035a" }}>
-      <p style={{ fontWeight: "bold" }}>Users List with Details :</p>
+    <div style={{ display: "flex", height: "100vh" }}>
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-
+          width: "300px",
+          backgroundColor: "#fc035a",
           padding: "20px",
         }}
       >
+        <p style={{ fontWeight: "bold" }}>Users List with Details :</p>
         <div
           style={{
-            width: "100%",
-            maxWidth: "1200px",
-            display: "flex",
-            flexDirection: "row",
+            overflow: "auto",
+            height: "400px",
+            borderRadius: "15px",
+            border: "1px solid #ccc",
           }}
         >
-          <div
-            style={{
-              marginBottom: "20px",
-              backgroundColor: "#ffff",
-              overflow: "auto",
-              height: "400px",
-              borderRadius: "15px",
-              border: "1px solid #ccc",
-            }}
-          >
-            <div>
-              <List
-                width={800}
-                height={400}
-                rowCount={100000}
-                rowHeight={50}
-                rowRenderer={CarRow}
-                style={{ padding: "10px" }}
-              />
-            </div>
-          </div>
-          <div style={{ paddingLeft: "5px" }}>
-            {selectedCar != null && (
-              <List
-                width={400}
-                height={400}
-                rowCount={100000}
-                rowHeight={50}
-                rowRenderer={UsersByCar}
-                style={{ padding: "10px" }}
-              />
-            )}
-          </div>
+          <List
+            width={300}
+            height={400}
+            rowCount={10}
+            rowHeight={50}
+            rowRenderer={CarRow}
+            style={{ padding: "10px" }}
+          />
         </div>
+      </div>
+      <div style={{ flex: 1, paddingLeft: "5px" }}>
+        {selectedCar != null && (
+          <List
+            width={400}
+            height={400}
+            rowCount={10}
+            rowHeight={50}
+            rowRenderer={UsersByCar}
+            style={{ padding: "10px" }}
+          />
+        )}
       </div>
     </div>
   );
