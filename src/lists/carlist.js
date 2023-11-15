@@ -48,9 +48,6 @@ function CarList({ combinedArray, carsArray }) {
       </div>
     );
   };
-  if (selectedCar !== null) {
-    console.log(selectedCar.length);
-  }
   return (
     <div style={{ backgroundColor: "#fc035a" }}>
       <p style={{ fontWeight: "bold" }}>Users List with Details :</p>
