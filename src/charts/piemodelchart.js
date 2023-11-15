@@ -40,8 +40,7 @@ function PieModelChart(combinedArray) {
     ({ person }) => {
       const personAge = person.age;
       return (
-        personAge >= selectedAgeRange.start &&
-        personAge <= selectedAgeRange.end
+        personAge >= selectedAgeRange.start && personAge <= selectedAgeRange.end
       );
     }
   );
@@ -111,9 +110,10 @@ function PieModelChart(combinedArray) {
   };
   return (
     <div>
-      <p style={{fontWeight:'bold'}}>Piechart for No.of.Cars vs No.of.Ages :</p>
+      <p style={{ fontWeight: "bold" }}>
+        Piechart for No.of.Cars vs No.of.Ages :
+      </p>
       <div>
-
         <label>Select Age Range:</label>
         <select
           value={`${selectedAgeRange.start}-${selectedAgeRange.end}`}
@@ -132,12 +132,14 @@ function PieModelChart(combinedArray) {
           ))}
         </select>
       </div>
-      {}
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          overflowX: "auto", 
+          overflowY: "auto", 
+          maxHeight: "800px", 
         }}
       >
         {pieDataArray.map(
