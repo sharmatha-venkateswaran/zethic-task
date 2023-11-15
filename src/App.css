@@ -36,3 +36,80 @@
     transform: rotate(360deg);
   }
 }
+
+.top-nav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.top-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.top-nav li {
+  display: inline;
+}
+
+.top-nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.top-nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.pie-chart-container {
+  text-align: center;
+}
+
+.centered-pie-chart {
+  display: inline-block;
+}
+
+.chart-buttons {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.chart-buttons button {
+  background-color: #f0f0f0;
+  color: #333;
+  margin-right: 5px;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.chart-buttons button.active {
+  background-color: #333;
+  color: #fff;
+}
+.pie-chart-container {
+  margin: 20px;
+}
+
+.pie-chart-row {
+  display: flex;
+  gap: 20px;
+}
+
+.centered-pie-chart {
+  flex: 1;
+  max-width: 300px;
+}
+
+.manufacturer-name {
+  font-weight: bold;
+}
+.top-nav li.active {
+  background-color: #1b1717;
+  color: #333;
+}
