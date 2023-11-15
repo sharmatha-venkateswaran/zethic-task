@@ -11,7 +11,8 @@ import {
 } from "chart.js";
 import { Pie } from "react-chartjs-2";
 import "react-virtualized/styles.css";
-function PieAgeChart(combinedArray) {
+import CarList from "../lists/carlist";
+function PieAgeChart(combinedArray,carsArray) {
   const ageRanges = [
     { label: "1-100", start: 1, end: 100 },
     { label: "20-25", start: 20, end: 25 },
@@ -85,7 +86,12 @@ function PieAgeChart(combinedArray) {
   };
 
   return (
+    <div style={{ display: "flex",flexDirection:"row" }}>
+      <div>
+      <CarList combinedArray={combinedArray} carsArray={carsArray} />
+      </div>
     <div>
+    
        <p style={{fontWeight:'bold'}}>Piechart for No.of.Cars vs No.of.Ages :</p>
       <div className="">
         <label>Select Age Range:</label>
@@ -129,6 +135,7 @@ function PieAgeChart(combinedArray) {
           <p>No data available for the selected age range.</p>
         )}
       </div>
+    </div>
     </div>
   );
 }

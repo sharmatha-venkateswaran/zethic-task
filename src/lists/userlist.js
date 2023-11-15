@@ -3,7 +3,7 @@ import "../App.css";
 import { List } from "react-virtualized";
 import "react-virtualized/styles.css";
 
-function UserList(combinedArray) {
+function UserList({ combinedArray }) {
   const [selectedUser, setSelectedUser] = useState(null);
 
   const handleUserClick = (user) => {
@@ -11,11 +11,11 @@ function UserList(combinedArray) {
   };
 
   const UserRow = ({ index, style }) => {
-    const user = combinedArray.combinedArray[index].person;
+    const user = combinedArray[index].person;
     const isSelected = selectedUser && selectedUser.id === user.id;
     const rowStyle = {
       ...style,
-      backgroundColor: isSelected ? "#4CAF50" : "transparent",
+      backgroundColor: isSelected ? "#ffff" : "transparent",
       cursor: "pointer",
     };
 
@@ -47,52 +47,34 @@ function UserList(combinedArray) {
   };
 
   return (
-    <div style={{ backgroundColor: "#fc035a" }}>
-      <p style={{ fontWeight: "bold" }}>Users List with Details :</p>
+    <div style={{ display: "flex", flexDirection: "row", height: "100vh" }}>
+      {/* Sidebar */}
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-
+          width: "300px",
+          backgroundColor: "#fc035a",
           padding: "20px",
         }}
       >
-        <div
-          style={{
-            width: "100%",
-            maxWidth: "1200px",
-            display: "flex",
-            flexDirection: "row",
-          }}
-        >
-          <div
-            style={{
-              marginBottom: "20px",
-              backgroundColor: "#ffff",
-              overflow: "auto",
-              height: "400px",
-              borderRadius: "15px",
-              border: "1px solid #ccc",
-            }}
-          >
-            <div>
-              <List
-                width={800}
-                height={400}
-                rowCount={100000}
-                rowHeight={50}
-                rowRenderer={UserRow}
-                style={{ padding: "10px" }}
-              />
-            </div>
-          </div>
-          <div style={{ paddingLeft: "5px" }}>
-            {selectedUser != null && <UserDetails />}
-          </div>
-        </div>
+        <p style={{ fontWeight: "bold" }}>Users List with Details :</p>
+        <List
+          width={300}
+          height={400}
+          rowCount={combinedArray.length}
+          rowHeight={50}
+          rowRenderer={UserRow}
+          style={{ padding: "10px" }}
+        />
+      </div>
+
+      {/* Main Content */}
+      <div
+        style={{
+          flex: 1,
+          padding: "20px",
+        }}
+      >
+        {selectedUser != null && <UserDetails />}
       </div>
     </div>
   );
