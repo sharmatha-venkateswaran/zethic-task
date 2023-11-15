@@ -90,7 +90,7 @@ function UserList(combinedArray) {
             </div>
           </div>
           <div style={{ paddingLeft: "5px" }}>
-            <UserDetails />
+            {selectedUser != null && <UserDetails />}
           </div>
         </div>
       </div>
