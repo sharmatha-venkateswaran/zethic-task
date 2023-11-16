@@ -43,17 +43,14 @@ function BarChart({ combinedArray }) {
   };
 
   return (
-    <div style={{ display: "flex",flexDirection:"row" }}>
-      <div>
-      <UserList combinedArray={combinedArray} />
-      </div>
+  
       <div>
       <p style={{ fontWeight: 'bold' }}>Bar Chart for No. of Users vs Country:</p>
-      <div style={{ padding: 40 }}>
+      <div style={{ pdding: 40 }}>
         <Bar data={bardata} options={options} />
       </div>
       </div>
-    </div>
+    
   );
 }
 
