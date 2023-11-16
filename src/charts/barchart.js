@@ -43,8 +43,7 @@ function BarChart({ combinedArray }) {
   };
 
   return (
-  
-      <div>
+  <div>
       <p style={{ fontWeight: 'bold' }}>Bar Chart for No. of Users vs Country:</p>
       <div style={{ pdding: 40 }}>
         <Bar data={bardata} options={options} />
