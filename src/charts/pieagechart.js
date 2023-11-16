@@ -86,13 +86,9 @@ function PieAgeChart(combinedArray,carsArray) {
   };
 
   return (
-    <div style={{ display: "flex",flexDirection:"row" }}>
-      <div>
-      <CarList combinedArray={combinedArray} carsArray={carsArray} />
-      </div>
+    <div >
     <div>
-    
-       <p style={{fontWeight:'bold'}}>Piechart for No.of.Cars vs No.of.Ages :</p>
+   <p style={{fontWeight:'bold'}}>Piechart for No.of.Cars vs No.of.Ages :</p>
       <div className="">
         <label>Select Age Range:</label>
         <select
