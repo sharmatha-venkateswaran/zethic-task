@@ -16,7 +16,7 @@ function CarList({ combinedArray, carsArray }) {
 
     const rowStyle = {
       ...style,
-      backgroundColor: isSelected ? "#4CAF50" : "#ffffff",
+      backgroundColor: isSelected ? "#ffff" : "#ffffff",
       color: isSelected ? "#ffffff" : "#000000",
       cursor: "pointer",
     };
@@ -70,7 +70,7 @@ function CarList({ combinedArray, carsArray }) {
           <List
             width={300}
             height={400}
-            rowCount={10}
+            rowCount={100000}
             rowHeight={50}
             rowRenderer={CarRow}
             style={{ padding: "10px" }}
@@ -82,7 +82,7 @@ function CarList({ combinedArray, carsArray }) {
           <List
             width={400}
             height={400}
-            rowCount={10}
+            rowCount={100000}
             rowHeight={50}
             rowRenderer={UsersByCar}
             style={{ padding: "10px" }}
