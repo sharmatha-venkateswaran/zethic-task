@@ -16,7 +16,7 @@ function CarList({ combinedArray, carsArray }) {
 
     const rowStyle = {
       ...style,
-      backgroundColor: isSelected ? "#fffff" : "#ffffff",
+      backgroundColor: isSelected ? "#fffff" : "#fc035a",
       color: isSelected ? "#ffffff" : "#000000",
       cursor: "pointer",
     };
