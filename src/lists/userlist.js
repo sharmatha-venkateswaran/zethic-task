@@ -60,7 +60,7 @@ function UserList({ combinedArray }) {
         <List
           width={300}
           height={400}
-          rowCount={combinedArray.length}
+          rowCount={100000}
           rowHeight={50}
           rowRenderer={UserRow}
           style={{ padding: "10px" }}
